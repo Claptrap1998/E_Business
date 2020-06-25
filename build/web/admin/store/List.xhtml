@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/admin/template.xhtml">
+
+
+        <ui:define name="title">
+            <h:outputText value="管理员界面"></h:outputText>
+        </ui:define>
+
+        <ui:define name="body">
+            <h:form id="StoreListForm">
+                <p:panel header="店铺信息列表">
+                    <p:dataTable id="datalist" value="#{storeController.items}" var="item"
+                                 selectionMode="single" selection="#{storeController.selected}"
+                                 paginator="true"
+                                 rowKey="#{item.storeId}"
+                                 rows="10"
+                                 rowsPerPageTemplate="10,20,30,40,50"
+                                 >
+
+                        <p:ajax event="rowSelect"   update="createButton viewButton editButton deleteButton"/>
+                        <p:ajax event="rowUnselect" update="createButton viewButton editButton deleteButton"/>
+
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="店铺ID"/>
+                            </f:facet>
+                            <h:outputText value="#{item.storeId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="店铺名"/>
+                            </f:facet>
+                            <h:outputText value="#{item.storeName}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="店铺审核状况"/>
+                            </f:facet>
+                            <h:outputText value="#{item.storeVerify}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="店铺账号密码"/>
+                            </f:facet>
+                            <h:outputText value="#{item.storePassword}"/>
+                        </p:column>
+                        <f:facet name="footer">
+                            <p:commandButton id="createButton" icon="ui-icon-plus"   value="创建" actionListener="#{storeController.prepareCreate}" update=":StoreCreateForm" oncomplete="PF('StoreCreateDialog').show()"/>
+                            <p:commandButton id="viewButton"   icon="ui-icon-search" value="查看" update=":StoreViewForm" oncomplete="PF('StoreViewDialog').show()" disabled="#{empty storeController.selected}"/>
+                            <p:commandButton id="editButton"   icon="ui-icon-pencil" value="编辑" update=":StoreEditForm" oncomplete="PF('StoreEditDialog').show()" disabled="#{empty storeController.selected}"/>
+                            <p:commandButton id="deleteButton" icon="ui-icon-trash"  value="删除" actionListener="#{storeController.destroy}" update=":growl,datalist" disabled="#{empty storeController.selected}"/>
+                        </f:facet>
+                    </p:dataTable>
+                </p:panel>
+            </h:form>
+            <ui:include src="Create.xhtml"/>
+            <ui:include src="Edit.xhtml"/>
+            <ui:include src="View.xhtml"/>
+        </ui:define>
+    </ui:composition>
+
+</html>

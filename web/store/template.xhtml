@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+    </h:head>
+
+    <h:body>
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="150" resizable="true" closable="true" collapsible="true">
+            <a href="http://localhost:8080/E_Business_1/ "> <h:graphicImage style="position: absolute;left: 60px;top: 30px;width: 200px;height: 90px;"
+                                        value="/resources/image/weblogo.png"/>
+            </a>
+
+            <h:outputText style="position:absolute;left:280px;top:40px;font-size:45px;font-weight:bold;" value="店铺店主,欢迎您！" />
+                </p:layoutUnit>
+
+                
+
+                <p:layoutUnit position="east" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="快速跳转链接">
+                            <p:menuitem value="首页" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="店铺审核" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="店铺信息" url="http://forum.primefaces.org/" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+            <p:layoutUnit position="west" collapsible="true" >
+
+                    <h:form>  
+
+                        <p:growl id="messages" showDetail="false"/>
+
+                        <h3 style="margin-left:20px">店铺菜单</h3>
+                        <p:menu>
+                            <p:submenu label="">
+                                <p:menuitem value="我的商品"  outcome="GoodList" update="messages" icon="pi pi-search" />
+                            </p:submenu>
+                            <p:submenu label="">
+                                <p:menuitem value="我的订单"  outcome="RecordList" update="messages" icon="pi pi-search" />
+                            </p:submenu>
+                            <p:submenu label="      ">
+                                <p:menuitem value="修改店铺信息"  outcome="StoreEdit" update="messages" icon="pi pi-search"/>
+                           </p:submenu>
+                        </p:menu>
+                    </h:form>
+                </p:layoutUnit>
+
+            
+
+            <p:layoutUnit position="center" >
+                <ui:insert name="body"/>
+            </p:layoutUnit>
+            </p:layout>
+
+    </h:body>
+
+</html>

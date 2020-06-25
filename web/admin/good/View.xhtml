@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="GoodViewDlg" widgetVar="GoodViewDialog" modal="true" resizable="false" appendTo="@(body)" header="商品详细信息">
+            <h:form id="GoodViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{goodController.selected != null}">
+                        <f:facet name="header">
+                                      <h:graphicImage style="width: 150px;height: 200px;"
+                                        value="#{goodController.selected.goodPath}"/>
+                         </f:facet>
+                        <h:outputText value="商品ID"/>
+                        <h:outputText value="#{goodController.selected.goodId}" />
+                        <h:outputText value="商品名称"/>
+                        <h:outputText value="#{goodController.selected.goodName}" title="商品名称"/>
+                        <h:outputText value="商品种类"/>
+                        <h:outputText value="#{goodController.selected.goodCate}" />
+                        <h:outputText value="商品价格"/>
+                        <h:outputText value="#{goodController.selected.goodPrice}"/>
+                        <h:outputText value="商品图片路径"/>
+                        <h:outputText value="#{goodController.selected.goodPath}"/>
+                        <h:outputText value="商品文字描述"/>
+                        <h:outputText value="#{goodController.selected.goodDescribe}"/>
+                        <h:outputText value="商品库存"/>
+                        <h:outputText value="#{goodController.selected.goodStock}" />
+                        <h:outputText value="商品所属店铺ID"/>
+                        <h:outputText value="#{goodController.selected.storestoreid}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="关闭" onclick="GoodViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <br />
+        <h:link outcome="/cart/List" value="Show All Cart Items"/>
+        <br />
+        <h:link outcome="/good/List" value="Show All Good Items"/>
+        <br />
+        <h:link outcome="/record/List" value="Show All Record Items"/>
+        <br />
+        <h:link outcome="/store/List" value="Show All Store Items"/>
+        <br />
+        <h:link outcome="/user/List" value="Show All User Items"/>
+         <h:form>
+            <h:inputText value="#{userController.id}"></h:inputText>
+            <h:commandButton action="/PERSON/personal_center.xhtml" value="登录" type="submit">
+            </h:commandButton>
+        </h:form>
+    </h:body>
+
+
+
+
+
+</html>
+

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+      <ui:composition template='template.xhtml'>
+        <ui:define name="title"><h:outputText value="我的商品"></h:outputText></ui:define>
+        <ui:define name="body">
+   
+                  <h:form>
+                <h:panelGrid columns="2" style="position:absolute;left:200px;top:100px;width:600px;height:150px">
+                    <h:outputLabel value="商品ID"  />
+                    <h:inputText id="goodId" value="#{goodController2.selected.goodId}"  required="true" requiredMessage="#{bundle.EditGoodRequiredMessage_goodId}"/>
+                    <h:outputLabel value="商品名称"  />
+                    <h:inputText id="goodName" value="#{goodController2.selected.goodName}"  />
+                    <h:outputLabel value="商品种类"  />
+                    <h:inputText id="goodCate" value="#{goodController2.selected.goodCate}"  />
+                    <h:outputLabel value="商品价格"  />
+                    <h:inputText id="goodPrice" value="#{goodController2.selected.goodPrice}"  />
+                    <h:outputLabel value="商品描述"  />
+                    <h:inputText id="goodDescribe" value="goodDescribe"  />
+                    <h:outputLabel value="商品库存"  />
+                    <h:inputText id="goodStock" value="goodStock"  />
+                    <h:outputLabel value="所属店铺ID"  />
+                    <h:selectOneMenu id="storestoreid" value="#{goodController2.selected.storestoreid}" title="storestoreid" required="true" requiredMessage="storestoreid">
+                        <f:selectItems value="#{storeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{goodController2.update}" value="保存" style="position:absolute;left:400px;top:300px;font-size: 25px"/>
+                <br />
+                <br />
+<!--                <h:link outcome="View" value="商品视图"/>-->
+
+<!--                <h:link outcome="/index" value="返回首页" />-->
+            </h:form>
+         </ui:define>
+       
+            </ui:composition>  
+</html>

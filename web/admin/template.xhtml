@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputScript library="js" name="jsfcrud.js"/>
+    </h:head>
+
+    <h:body>
+        
+        <p:growl id="growl" life="3000" />
+
+        <p:layout fullPage="true">
+            <p:layoutUnit position="north" size="100" resizable="true" closable="true" collapsible="true">
+            <a href="http://localhost:8080/E_Business_1/  "> <h:graphicImage style="position: absolute;left: 10px;top: 10px;width: 200px;height: 90px;"
+                                        value="/resources/image/weblogo.png"/>
+            </a>
+
+            <h:outputText style="position:absolute;left:200px;top:30px;font-size:35px;font-weight:bold;" value="管理员,欢迎您！" />
+                </p:layoutUnit>
+
+                
+
+                <p:layoutUnit position="east" size="175" header="Left" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="快速跳转链接">
+                            <p:menuitem value="首页" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="店铺审核" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="管理员信息" url="http://forum.primefaces.org/" />
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" collapsible="true">
+
+                    <h:form>  
+
+                        <p:growl id="messages" showDetail="false"/>
+
+                        <h3 style="margin-left:20px">管理菜单</h3>
+                        <p:menu>
+                            <p:submenu label="账号管理">
+                                <p:menuitem value="用户管理"  outcome="/admin/user/List" update="messages" icon="pi pi-search" />
+                            <p:menuitem value="店铺管理"  outcome="/admin/store/List" update="messages" icon="pi pi-search"/>
+                            </p:submenu>
+                            <p:submenu label="交易管理">
+                                <p:menuitem value="商品管理"  outcome="/admin/good/List" update="messages" icon="pi pi-search"/>
+                                <p:menuitem value="记录管理"  outcome="/admin/record/List" update="messages" icon="pi pi-search"/>
+                           </p:submenu>
+                           <p:submenu label="统计数据">
+                                <p:menuitem value="数量统计"  outcome="/admin/Statistics/Statistics" update="messages" icon="pi pi-search"/>
+                           </p:submenu>
+                        </p:menu>
+                    </h:form>
+                </p:layoutUnit>
+
+            
+
+            <p:layoutUnit position="center">
+                <ui:insert name="body"/>
+            </p:layoutUnit>
+
+        </p:layout>
+
+    </h:body>
+
+</html>

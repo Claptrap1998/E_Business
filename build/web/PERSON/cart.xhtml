@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+
+        <title>Book Trading</title>
+    </h:head>
+    <h:body style="background-image: url(resources/image/bg2.JPG);background-size:100% 100%; background-attachment: fixed">
+       <h:form>
+            
+            <a href="http://localhost:8080/E_Business_1/"> <h:graphicImage style="position: absolute;left: 70px;top: 30px;width: 200px;height: 90px;"
+                                        value="/resources/image/weblogo.png"/></a>
+
+            <h:commandLink id="register" action="/login/register.xhtml" style="position:absolute;left:920px;padding: 10px">
+                <h:outputText value="注册"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="personal" action="/login/personalLogin.xhtml" style="position:absolute;left:980px;padding: 10px">
+                <h:outputText value="个人登录"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="shop" action="/login/shopLogin.xhtml" style="position:absolute;left:1060px;padding: 10px">
+                <h:outputText value="店铺登录"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="administrator" action="/login/administratorLogin.xhtml" style="position:absolute;left:1140px;padding: 10px">
+                <h:outputText value="管理员登录"></h:outputText>
+            </h:commandLink>
+            
+
+        </h:form>
+
+        <div class="ui-g-12 ui-md-4" style="position:absolute;left:370px;top:50px;">
+            <div class="ui-inputgroup">
+                <p:inputText placeholder="搜索：请输入书名"  size="70"/>
+                <h:form>
+                    <p:commandButton icon="pi pi-search"  action="aftersearch.xhtml" styleClass="white-button" />  
+                </h:form>
+
+            </div>
+        </div>
+
+
+        <h:form style="position:absolute;left:10px;top:100px;">
+            <p:growl>
+                <p:autoUpdate />
+            </p:growl>
+
+            <p:panelMenu style="padding-top:50px;margin-top:0px;width:300px">
+                <p:submenu label="教育"  >
+                    <p:menuitem value="课本" icon="pi pi-star" />
+                    <p:menuitem value="参考教辅" icon="pi pi-star" />
+                    <p:menuitem value="童书" icon="pi pi-star" />
+                    <p:menuitem value="其他" icon="pi pi-star"/>
+                </p:submenu>
+                <p:submenu label="小说">
+                    <p:menuitem value="世界名著" outcome="showbooks.xhtml" icon="pi pi-star"/>
+                    <p:menuitem value="中国当代小说" icon="pi pi-star"/>
+                    <p:menuitem value="中国现代小说" icon="pi pi-star"/>
+                    <p:menuitem value="其他" icon="pi pi-star"/>
+                </p:submenu>
+                <p:submenu label="人文社科">
+                    <p:menuitem value="成功学" icon="pi pi-star"/>
+                    <p:menuitem value="心理学" icon="pi pi-star"/>
+                    <p:menuitem value="历史" icon="pi pi-star"/>
+                    <p:menuitem value="政治" icon="pi pi-star"/>
+                </p:submenu>
+                <p:submenu label="期刊">
+                </p:submenu>
+
+
+            </p:panelMenu>
+        </h:form>
+       
+
+            
+            
+        <h:form id="form" style="width:1000px;position:absolute;left:350px;top:150px;">
+        
+                    <h:form>
+                       <p:panelGrid columns="2">
+                           <h:outputLabel value="加入购物车" />
+                           <br/>
+                            <h:outputLabel value="请输入加入的数量" for="cartAmount" />
+                            <p:inputText id="cartAmount" value="#{cartController.selected.cartAmount}"  required="true" />
+                            <h:outputLabel value="请选择加入的商品id" for="goodgoodid" />
+                            <h:selectOneMenu id="goodgoodid" value="#{cartController.selected.goodgoodid}"  required="true" >
+                                <f:selectItems value="#{goodController.itemsAvailableSelectOne}" var="goodgoodidItem"
+                                           itemValue="#{goodgoodidItem}"/>
+                            </h:selectOneMenu>
+                            <h:outputLabel value="请选择用户id" for="useruserid" />
+                            <h:selectOneMenu id="useruserid" value="#{cartController.selected.useruserid}"  required="true" >
+                                <f:selectItems value="#{userController.itemsAvailableSelectOne}"/>
+                            </h:selectOneMenu>
+                        </p:panelGrid>
+                        <br/>
+                        <h:commandButton actionListener="#{cartController.create}" value="加入购物车" style="white-space: " type="submit" />
+                    </h:form>
+        </h:form>
+    </h:body>
+</html>
+
+
+
+

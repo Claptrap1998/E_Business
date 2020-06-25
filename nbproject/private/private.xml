@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/store/GoodEdit.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/history_order.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/showbooks.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/login/index.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/index.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/ejb/RecordFacade.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/login/index_1.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/ejb/AbstractFacade.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/store/RecordList.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/admin/template.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/entity/Cart.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/login/failure.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/aftersearch.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/webcontroller/GoodController2.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/login/administratorLogin.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/cart.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/login/shopLogin.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/ejb/RegisterService.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/entity/Record.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/webcontroller/CartController.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/entity/Good.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/ejb/GoodFacade.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/entity/Store.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/webcontroller/UserController.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/confirm.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/entity/User.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/personal_center.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/store/GoodList.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/personal_center_edit.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/shopping_cart.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/login/personalLogin.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/PERSON/pay.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/store/GoodCreate.xhtml</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/src/java/ejb/CartFacade.java</file>
+            <file>file:/C:/Users/13250/Desktop/E_Business_1/web/login/shop.xhtml</file>
+        </group>
+    </open-files>
+</project-private>

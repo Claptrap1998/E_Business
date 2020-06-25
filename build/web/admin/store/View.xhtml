@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="StoreViewDlg" widgetVar="StoreViewDialog" modal="true" resizable="false" appendTo="@(body)" header="店铺详细信息">
+            <h:form id="StoreViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{storeController.selected != null}">
+                        <h:outputText value="店铺ID"/>
+                        <h:outputText value="#{storeController.selected.storeId}" />
+                        <h:outputText value="店铺名称"/>
+                        <h:outputText value="#{storeController.selected.storeName}" />
+                        <h:outputText value="店铺是否通过审核"/>
+                        <h:outputText value="#{storeController.selected.storeVerify}" />
+                        <h:outputText value="店铺账号密码"/>
+                        <h:outputText value="#{storeController.selected.storePassword}" />
+                    </p:panelGrid>
+                    <p:commandButton value="关闭" onclick="StoreViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

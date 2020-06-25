@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="RecordViewDlg" widgetVar="RecordViewDialog" modal="true" resizable="false" appendTo="@(body)" header="交易记录详情">
+            <h:form id="RecordViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{recordController.selected != null}">
+                        <h:outputText value="交易记录ID"/>
+                        <h:outputText value="#{recordController.selected.recordId}" title="交易记录ID"/>
+                        <h:outputText value="交易时间"/>
+                        <h:outputText value="#{recordController.selected.recordTime}" title="交易时间">
+                            <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                        </h:outputText>
+                        <h:outputText value="交易商品数量"/>
+                        <h:outputText value="#{recordController.selected.recordAmount}" title="交易商品ID"/>
+                        <h:outputText value="交易总金额"/>
+                        <h:outputText value="#{recordController.selected.recordTotalprice}" title="交易总金额"/>
+                        <h:outputText value="交易商品ID"/>
+                        <h:outputText value="#{recordController.selected.goodgoodid}" title="交易商品ID"/>
+                        <h:outputText value="交易用户ID"/>
+                        <h:outputText value="#{recordController.selected.useruserid}" title="交易用户ID"/>
+                    </p:panelGrid>
+                    <p:commandButton value="关闭" onclick="RecordViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

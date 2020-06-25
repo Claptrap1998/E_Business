@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <title>Register</title>
+        <h:outputStylesheet library="css" name="register.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body class="basic-grey">
+        <h:form class="rform">
+            <h2>注册</h2>
+            <h:panelGrid columns="3">
+                <h:outputText value="1.请选择注册类型" style="padding: 20px "></h:outputText>
+                <h:selectOneRadio id="chooseType"  value="#{registerService.type}" style="padding: 10px 20px" required="true" requiredMessage="注册类型必选">
+                    <f:selectItem itemValue="personal" itemLabel="用户" />
+                    <f:selectItem itemValue="shop" itemLabel="店铺" />           
+                </h:selectOneRadio>
+                <h:message for="chooseType" style="color:red"/>
+
+                <h:outputText value="2.请输入用户名/店铺名" style="padding: 20px "></h:outputText>
+                <h:inputText id="register_name"  
+                             value="#{registerService.name}"
+                             size="20" 
+                             style="margin: 10px 20px"
+                             required="true"
+                             requiredMessage="用户名必填">
+                    <f:validateLength minimum="2" maximum="15" /> 
+                </h:inputText>
+                <h:message for="register_name" style="color:red"/>
+
+                <h:outputText value="3.请输入邮箱" style="padding: 20px "></h:outputText>
+                <h:inputText id="register_email" 
+                             value="#{registerService.email}"
+                             size="20" 
+                             style="margin: 10px 20px"
+                             required="true"
+                             requiredMessage="邮箱必填"
+                             >
+                    <f:validator validatorId="BookTrading.EmailValidator" />
+                </h:inputText>
+                <h:message for="register_email" style="color:red"/>
+
+                <h:outputText value="4.请输入手机号" style="padding: 20px "></h:outputText>
+                <h:inputText id="register_phone" 
+                             value="#{registerService.phonenumber}"
+                             size="20" 
+                             style="margin: 10px 20px "
+                             required="true"
+                             requiredMessage="手机号必填">
+                    <f:validator validatorId="BookTrading.PhoneValidator" /> 
+                </h:inputText>
+                <h:message for="register_phone" style="color:red"/>
+
+                <h:outputText value="5.请输入密码" style="padding: 20px "></h:outputText>
+                <h:inputSecret id="register_pw1"  
+                               value="#{registerService.password}"
+                               required="true"
+                               requiredMessage="密码必填"
+                               maxlength="20" 
+                               style="margin: 10px 20px ">
+                </h:inputSecret>
+                <h:message for="register_pw1" style="color:red"/>
+
+                <h:outputText value="6.请再次输入密码" style="padding: 20px "></h:outputText>
+                <h:inputSecret id="register_pw2"  
+                               value="#{registerService.passwordConfirm}" 
+                               required="true"
+                               requiredMessage="请确认密码"
+                               style="margin: 10px 20px "
+                               validator="#{registerService.isPasswordRight}">
+                </h:inputSecret>
+                <h:message for="register_pw2" style="color:red"/>
+
+            </h:panelGrid>
+            <h:commandButton id="register-button" 
+                             value="注册" 
+                             action="#{registerService.submitRegister}"
+                             class="rbutton"/>
+        </h:form>
+    </h:body>
+</html>
+

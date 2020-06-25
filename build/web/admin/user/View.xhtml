@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UserViewDlg" widgetVar="UserViewDialog" modal="true" resizable="false" appendTo="@(body)" header="用户详细信息">
+            <h:form id="UserViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{userController.selected != null}">
+                        <h:outputText value="用户ID"/>
+                        <h:outputText value="#{userController.selected.userId}" />
+                        <h:outputText value="用户名"/>
+                        <h:outputText value="#{userController.selected.userName}" />
+                        <h:outputText value="用户账号密码"/>
+                        <h:outputText value="#{userController.selected.userPassword}" />
+                        <h:outputText value="用户住址"/>
+                        <h:outputText value="#{userController.selected.userAddr}" />
+                        <h:outputText value="用户电话号码"/>
+                        <h:outputText value="#{userController.selected.userTel}" />
+                        <h:outputText value="用户账户余额"/>
+                        <h:outputText value="#{userController.selected.userBalance}" />
+                        <h:outputText value="用户电子邮箱"/>
+                        <h:outputText value="#{userController.selected.userMail}"/>
+                    </p:panelGrid>
+                    <p:commandButton value="关闭" onclick="UserViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <ui:composition template='template.xhtml'>
+        <ui:define name="title"><h:outputText value="我的商品"></h:outputText></ui:define>
+        <ui:define name="body">
+
+               
+            
+            <h:form styleClass="jsfcrud_list_form" style="position:absolute;left:0px;top:0px;width:1000px;height:100px">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                
+                    
+                    <p:dataTable value="#{goodController2.itemss}" var="items">
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品ID" style="font-size:22px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value="#{items.goodId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品名称" style="font-size:22px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value="#{items.goodName}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品种类" style="font-size:22px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value="#{items.goodCate}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品价格" style="font-size:22px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value="#{items.goodPrice}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品描述" style="font-size:20px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value="#{items.goodDescribe}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品库存" style="font-size:22px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value="#{items.goodStock}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品所属店铺ID" style="font-size:20px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value="#{items.storestoreid}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;" style="font-size:22px;font-style: oblique"/>
+                            </f:facet>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{goodController2.prepareEdit}" value="编辑商品   " style="font-size:20px"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{goodController2.destroy}" value="撤销商品" style="font-size:20px"/>
+                        </p:column>
+                    </p:dataTable>
+                
+                <br />
+                <h:commandLink action="#{goodController2.prepareCreate}" value="创建新的商品" style="position:absolute;left:200px;top:450px;font-size:20px;"/>
+                <br />
+                <br />
+                
+<!--                <h:link outcome="/GoodList" value="返回商品中心" style="position:absolute;left:800px;top:300px;font-size:20px;"/>-->
+                
+            </h:form>
+            
+            
+            
+        </ui:define>
+       
+            </ui:composition>  
+</html>
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>店铺主页</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h1 align="center">店铺主页</h1>
+        <h:form style="float:right">
+            <h:commandLink id="center"  style="padding: 10px" >
+                <h:outputText value="我的商品"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="order" style="padding: 10px">
+                <h:outputText value="我的订单"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="cart" style="padding: 10px">
+                <h:outputText value="修改商品"></h:outputText>
+            </h:commandLink>
+        </h:form>
+    </h:body>
+</html>

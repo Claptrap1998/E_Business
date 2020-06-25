@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Administrator Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="login.css"/>
+    </h:head>
+    <h:body class="rlogin">
+        <h:form class="lform">
+            <h2 align="center">管理员登录</h2>
+            <h:panelGrid columns="2">
+                <h:outputText value="登录名"></h:outputText>
+                <h:inputText size="20" 
+                             id="alogin"
+                             value="#{registerManager.login}"
+                             a:placeholder="id/用户名"/>
+                <h:outputText value="密码"></h:outputText>
+                <h:inputSecret size="20"
+                               id="aloginpw"
+                               value="#{registerManager.loginPassword}"
+                               validator="#{registerManager.checkUserLogin}"/>
+                <br></br>
+                <h:message for="aloginpw" style="color:red"/>
+            </h:panelGrid>
+            <h:commandButton class="lbutton" value="登录" action="/admin/template.xhtml" />
+            <h:message for="adlogin-button" style="color:red"/>
+        </h:form>  
+    </h:body>
+</html>

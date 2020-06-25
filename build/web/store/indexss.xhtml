@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="300" resizable="true" closable="true" collapsible="true">
+                    <h:outputText value="店铺中心" style="position:absolute;left:500px;top:20px;font-size:50px;font-family:Microsoft YaHei;color:grey">
+                        
+                    </h:outputText>
+                </p:layoutUnit>
+
+
+                <p:layoutUnit position="west" size="275" header="工具栏" collapsible="true">
+                    <p:menu>
+                        <p:submenu label="" style="size:200px;background-color: #BEBEBE" >
+                            <p:menuitem value="我的商品" outcome="/store/GoodList" style="font-size:20px"/>
+                            <p:menuitem value="我的订单 " outcome="/store/RecordList" style="font-size:20px"/>
+                            <p:menuitem value="修改店铺信息" outcome="/store/StoreEdit" style="font-size:20px"/>
+                            
+
+                        </p:submenu>
+
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h:form style="position:absolute;left:200px;top:300px;font-size:40px;background-color:#F0F0F0;width:400px;height:250px">
+                        <div >
+                              <p:commandButton value="我的商品" action="/store/GoodList.xhtml" style="position:absolute;left:140px;top:90px;font-size:40px;font-family:Microsoft YaHei;color:#4F4F4F"/>
+                             
+                        </div>
+                        
+                    </h:form>
+                    
+                    
+                
+                </p:layoutUnit>
+
+            </p:layout>
+        
+        
+        
+        
+        
+    </h:body>
+</html>
+

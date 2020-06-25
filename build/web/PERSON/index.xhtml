@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <link rel="stylesheet" type="text/css" href="BookTrading/resources/css/index.css" />
+        <h:outputStylesheet library="css" name="index.css"/>
+        <title>Book Trading</title>
+    </h:head>
+    <h:body style="background-image: url(resources/image/bg2.JPG);background-size:100% 100%; background-attachment: fixed">
+      
+        <h:form>
+            
+            <h:graphicImage style="position: absolute;left: 70px;top: 30px;width: 200px;height: 90px;"
+                                        value="resources/image/weblogo.png"/>
+
+            <h:commandLink id="register" action="/login/register.xhtml" style="position:absolute;left:920px;padding: 10px">
+                <h:outputText value="注册"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="personal" action="/login/personalLogin.xhtml" style="position:absolute;left:980px;padding: 10px">
+                <h:outputText value="个人登录"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="shop" action="/login/shopLogin.xhtml" style="position:absolute;left:1060px;padding: 10px">
+                <h:outputText value="店铺登录"></h:outputText>
+            </h:commandLink>
+            <h:commandLink id="administrator" action="/login/administratorLogin.xhtml" style="position:absolute;left:1140px;padding: 10px">
+                <h:outputText value="管理员登录"></h:outputText>
+            </h:commandLink>
+            
+
+        </h:form>
+
+        <div class="ui-g-12 ui-md-4" style="position:absolute;left:370px;top:50px;">
+            <div class="ui-inputgroup">
+                <p:inputText placeholder="搜索：请输入书名"  size="70"/>
+                <h:form>
+                    <p:commandButton icon="pi pi-search"  action="aftersearch.xhtml" styleClass="white-button" />  
+                </h:form>
+                
+            </div>
+        </div>
+
+
+        <h:form style="position:absolute;left:10px;top:100px;">
+            <p:growl>
+                <p:autoUpdate />
+            </p:growl>
+
+            <p:panelMenu style="padding-top:50px;margin-top:0px;width:300px">
+                <p:submenu label="教育"  style=" ">
+                    <p:menuitem value="课本" icon="pi pi-star" />
+                    <p:menuitem value="参考教辅" icon="pi pi-star" />
+                    <p:menuitem value="童书" icon="pi pi-star" />
+                    <p:menuitem value="其他" icon="pi pi-star"/>
+                </p:submenu>
+                <p:submenu label="小说">
+                    <p:menuitem value="世界名著" outcome="showbooks.xhtml" icon="pi pi-star"/>
+                    <p:menuitem value="中国当代小说" icon="pi pi-star"/>
+                    <p:menuitem value="中国现代小说" icon="pi pi-star"/>
+                    <p:menuitem value="其他" icon="pi pi-star"/>
+                </p:submenu>
+                <p:submenu label="人文社科">
+                    <p:menuitem value="成功学" icon="pi pi-star"/>
+                    <p:menuitem value="心理学" icon="pi pi-star"/>
+                    <p:menuitem value="历史" icon="pi pi-star"/>
+                    <p:menuitem value="政治" icon="pi pi-star"/>
+                </p:submenu>
+                <p:submenu label="期刊">
+                </p:submenu>
+
+
+            </p:panelMenu>
+        </h:form>
+
+
+        <h:form style="float:right;width:800px;position:absolute;left:350px;top:150px;">
+            <p:growl id="msgs" showDetail="true" />
+
+            <p:panel id="basic" header="新书推荐" footer="更多新书推荐···" style="margin-bottom:20px">
+                <p:graphicImage style="width:150px;height:200px;" value="resources/image/book1.jpg"/>
+                <h:panelGrid columns="2" cellpadding="10">
+                    <h:outputText style="position:absolute;left:180px;top:63px;font-size:25px;font-weight:bold;font-style:Microsoft Yahei "
+                                  value="《了不起的盖茨比》" />
+                    <h:outputText style="position:absolute;left:180px;top:110px;font-size:17px "
+                                  value="作家：弗·司各特·菲茨杰拉德" />
+                    <h:outputText style="position:absolute;left:180px;top:140px;font-size:17px "
+                                  value="售价：¥49.80" />
+                    <h:outputText style="position:absolute;left:180px;top:190px;font-size:15px "
+                                  value="图书简介：Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
+                                  "/>
+                </h:panelGrid>
+            </p:panel>
+
+            <p:panel id="toggleable" header="您可能感兴趣的" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel" style="margin-bottom:20px">
+
+                <p:ajax event="close" listener="#{panelView.onClose}" update="msgs" />
+                <p:ajax event="toggle" listener="#{panelView.onToggle}" update="msgs" />
+
+                <h:graphicImage style="width:150px;height:200px;" value="resources/image/book12.jpg"/>
+
+                <h:panelGrid columns="2" cellpadding="10">
+                    <h:outputText style="position:absolute;left:180px;top:413px;font-size:25px;font-weight:bold;font-style:Microsoft Yahei "
+                                  value="《1984》" />
+                    <h:outputText style="position:absolute;left:180px;top:460px;font-size:17px "
+                                  value="作家：乔治·奥威尔" />
+                    <h:outputText style="position:absolute;left:180px;top:490px;font-size:17px "
+                                  value="售价：¥39.80" />
+                    <h:outputText style="position:absolute;left:180px;top:540px;font-size:15px "
+                                  value="图书简介：Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
+                                  "/>
+                </h:panelGrid>
+
+                <f:facet name="options">
+                    <p:menu>
+                        <p:submenu label="Settings">
+                            <p:menuitem value="Toggle" url="#" icon="pi pi-clone" onclick="PF('panel').toggle()" />
+                            <p:menuitem value="Remove" url="#" icon="pi pi-times" onclick="PF('panel').close()" />
+                        </p:submenu>
+                    </p:menu>
+                </f:facet>
+            </p:panel>
+
+            <p:panel id="custom" header="打折图书" style="margin-bottom:20px">
+                <h:graphicImage style="width:150px;height:200px;" value="resources/image/book13.jpg"/>
+                <h:panelGrid columns="2" cellpadding="10">
+                    <h:outputText style="position:absolute;left:180px;top:763px;font-size:25px;font-weight:bold;font-style:Microsoft Yahei "
+                                  value="《千只鹤》" />
+                    <h:outputText style="position:absolute;left:180px;top:810px;font-size:17px "
+                                  value="作家：川端康成" />
+                    <h:outputText style="position:absolute;left:180px;top:840px;font-size:17px "
+                                  value="原价：¥32.80  现售价：¥25.80" />
+                    <h:outputText style="position:absolute;left:180px;top:890px;font-size:15px "
+                                  value="图书简介：Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
+ "/>
+                </h:panelGrid>
+
+
+
+                        </p:panel>
+
+                        <p:panel id="horizontal" header="查看更多" toggleable="true" toggleOrientation="horizontal">
+                            <h:panelGrid>
+                            </h:panelGrid>
+                        </p:panel>
+                        </h:form>
+
+                        </h:body>
+                        </html>
+
+
+
+

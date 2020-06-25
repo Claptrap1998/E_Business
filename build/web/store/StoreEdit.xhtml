@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    
+    <ui:composition template='template.xhtml'>
+        <ui:define name="title"><h:outputText value="我的订单"></h:outputText></ui:define>
+        <ui:define name="body">
+
+    
+                              <h:form >
+                <h:panelGrid columns="2" style="position:absolute;left:200px;top:100px;width:600px;height:150px">
+                    <h:outputLabel value="店铺ID" for="storeId" style="font-size: 25px"/>
+                    <h:inputText id="storeId" value="" title="#{bundle.EditStoreTitle_storeId}" required="true" requiredMessage="需要填写ID" style="font-size: 20px"/>
+                    <h:outputLabel value="店铺名字" for="storeName" style="font-size: 25px"/>
+                    <h:inputText id="storeName" value="#{storeController.selected.storeName}" title="#{bundle.EditStoreTitle_storeName}" required="true" requiredMessage="需要填写商铺名字" style="font-size: 20px"/>
+                    <h:outputLabel value="店铺通过" for="storeVerify" style="font-size: 25px"/>
+                    <h:inputText id="storeVerify" value="1" title="#{bundle.EditStoreTitle_storeVerify}" required="true" requiredMessage="需要填写商铺是否通过" style="font-size: 20px"/>
+                    <h:outputLabel value="店铺密码" for="storePassword" style="font-size: 25px"/>
+                    <h:inputText id="storePassword" value="#{storeController.selected.storePassword}" title="#{bundle.EditStoreTitle_storePassword}" required="true" requiredMessage="需要填写商铺的密码" style="font-size: 20px"/>
+                </h:panelGrid>
+                <h:commandLink action="#{storeController.update}" value="保存" style="position:absolute;left:400px;top:300px;font-size: 25px"/>
+                <br />
+                <br />
+               
+               <br />
+            </h:form>
+              </ui:define>
+       
+            </ui:composition>  
+    
+</html>
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:p="http://primefaces.org/ui"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+      <ui:composition template='template.xhtml'>
+        <ui:define name="title"><h:outputText value="我的商品"></h:outputText></ui:define>
+        <ui:define name="body">
+   
+                <h:form>
+                <p:panelGrid columns="2" style="position:absolute;left:400px;top:130px;width:600px;height:150px">
+                    <p:outputLabel value="商品ID" for="goodId" />
+                    <p:inputText id="goodId" value="#{goodController2.selected.goodId}" title="goodId" required="true" requiredMessage="需要商品ID"/>
+                    <p:outputLabel value="商品名字" for="goodName" />
+                    <p:inputText id="goodName" value="#{goodController2.selected.goodName}" title="goodName" />
+                    <p:outputLabel value="商品种类" for="goodCate" />
+                    <p:inputText id="goodCate" value="#{goodController2.selected.goodCate}" title="goodCate" />
+                    <p:outputLabel value="商品价格}" for="goodPrice" />
+                    <p:inputText id="goodPrice" value="#{goodController2.selected.goodPrice}" title="goodPrice" />
+                    <p:outputLabel value="商品图片存储路径" for="goodPath" />
+                    <p:inputText id="goodPath" value="#{goodController2.selected.goodPath}" title="goodPath" />
+                    <p:outputLabel value="商品描述" for="goodDescribe" />
+                    <p:inputText id="goodDescribe" value="#{goodController2.selected.goodDescribe}" title="goodDescribE" />
+                    <p:outputLabel value="商品库存" for="goodStock" />
+                    <p:inputText id="goodStock" value="#{goodController2.selected.goodStock}" title="goodStock" />
+                    <p:outputLabel value="storestoreid" for="storestoreid" />
+                    <p:selectOneMenu id="storestoreid" value="#{goodController2.selected.storestoreid}" title="#storestoreid" required="true" requiredMessage="需要storestoreid">
+                        <f:selectItems value="#{storeController.itemsAvailableSelectOne}"/>
+                    </p:selectOneMenu>
+                </p:panelGrid>
+                <br />
+                <p:commandLink action="#{goodController2.create}" value="保存" style="position:absolute;left:600px;top:570px;font-size: 25px" />
+                <br />
+                <br />
+                <br />
+                <br />
+            </h:form>
+         </ui:define>
+       
+            </ui:composition>  
+</html>

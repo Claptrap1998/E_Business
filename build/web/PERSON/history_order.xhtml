@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>修改个人信息</title>
+    </h:head>
+    <h:body style="background-image: url(resources/image/bg2.JPG);background-size:100% 100%; background-attachment: fixed">
+        <h:form>  
+             <h:graphicImage style="position: absolute;left: 80px;top: 30px;width: 200px;height: 90px;"
+                                                                          value="/resources/image/weblogo.png"/>
+
+            <div class="ui-g-12 ui-md-4" style="position:absolute;left:370px;top:50px;">
+                <div class="ui-inputgroup">
+                    <p:inputText placeholder="请输入书名"  size="70"/>
+                    <h:form>
+                        <p:commandButton icon="pi pi-search"  action="aftersearch.xhtml" styleClass="white-button" />  
+                    </h:form>
+
+                </div>
+            </div>
+        </h:form>
+
+        <h:form style="position:absolute;left:10px;top:100px;">
+  
+            <p:panelMenu style="padding-top:50px;margin-top:0px;width:300px">
+                <p:submenu label="用户">
+                    <p:menuitem value="我的信息"  outcome="/PERSON/personal_center.xhtml">
+                    </p:menuitem>
+
+                    <p:menuitem value="购物车" outcome="/PERSON/shopping_cart.xhtml">
+                    </p:menuitem>
+                </p:submenu>
+            </p:panelMenu>
+        </h:form>
+
+
+        <h:form style="float:right;width:800px;position:absolute;left:350px;top:150px;">
+            <p:growl id="msgs" showDetail="true" />
+
+            <p:panel id="basic" header="我的信息" style="margin-bottom:20px">
+
+
+                <h:outputText value="姓名：#{registerService.name_}"/>
+                <br></br>
+                <h:outputText value="密码：#{registerService.password_}"/>
+                <br></br>
+                <h:outputText value="地址：#{registerService.address_}"/>
+                <br></br>
+                <h:outputText value="电话：#{registerService.tel_}"/>
+                <br></br>
+                <h:outputText value="余额：#{registerService.balance_}"/>
+                <br></br>
+                <h:outputText value="邮箱：#{registerService.mail_}"/>
+
+                             <h:commandButton action="/PERSON/personal_center_edit.xhtml" value="修改信息"/>
+
+            </p:panel>
+
+        </h:form>
+
+    </h:body>
+</html>
+

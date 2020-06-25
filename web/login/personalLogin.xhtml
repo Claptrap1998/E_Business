@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+    <h:head>
+        <title>Personal Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="login.css"/>
+    </h:head>
+    <h:body class="rlogin">
+        <h:form class="lform">
+            <h2 align="center">用户登录</h2>
+            <h:panelGrid columns="2">
+                <h:outputText value="登录名"></h:outputText>
+                <h:inputText size="20" 
+                             id="login"
+                             a:placeholder="用户名/邮箱/手机号"
+                             value="#{registerService.login}"/>
+                <h:outputText value="密码"></h:outputText>
+                <h:inputSecret size="20"
+                               id="loginpw"
+                               value="#{registerService.loginPassword}"
+                               validator="#{registerService.checkUserLogin}"/>
+                <br></br>
+                <h:message for="loginpw" style="color:red;margin-left: 20px"/>
+            </h:panelGrid>
+            <h:commandButton class="lbutton" id="login-button"  value="登陆" action="/PERSON/personal_center.xhtml"/>
+            <h:message for="login-button" style="color:red"/>
+        </h:form>
+    </h:body>
+</html>

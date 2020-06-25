@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+  
+        <ui:composition template='template.xhtml'>
+        <ui:define name="title"><h:outputText value="我的商品"></h:outputText></ui:define>
+        <ui:define name="body">
+                    <h:form styleClass="jsfcrud_list_form" style="position:absolute;left:0px;top:0px;width:1000px;height:100px">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListRecordEmpty}" rendered="#{recordController2.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{recordController2.items.rowCount > 0}">
+                   
+                    <p:dataTable value="#{recordController2.items}" var="item"  style="border:solid 1px">
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="订单ID"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recordId}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="订单时间"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recordTime}">
+                                <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                            </h:outputText>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="商品数量"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recordAmount}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="订单总价"/>
+                            </f:facet>
+                            <h:outputText value="#{item.recordTotalprice}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="用户ID"/>
+                            </f:facet>
+                            <h:outputText value="#{item.useruserid}"/>
+                        </p:column>
+                        <p:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{recordController2.prepareView}" value="查看"/>
+                            <h:outputText value=" "/>
+                            
+                        </p:column>
+                    </p:dataTable>
+                </h:panelGroup>
+                <br />
+                <br />
+                <br />
+            </h:form>
+           
+        </ui:define>
+       
+            </ui:composition>       
+            
+</html>
